@@ -1,0 +1,32 @@
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+
+server:
+  #服务端口号
+  port: 8080
+
+spring:
+  data:
+    #MongoDB configuration
+    mongodb:
+      database: oomall
+      username: demouser
+      password: '123456'
+      authentication-database: oomall
+  jackson:
+    #JSON的时间数据的时区
+    time-zone: GMT+8
+replicaset:
+  mongodb:
+    replica-set: rs0
+    read-preference: nearest
+    hosts: mongo1:27017,mongo2:27018,mongo3:27019
+
+logging:
+  level:
+    org.mongodb.driver.protocol.command: DEBUG
+
+
